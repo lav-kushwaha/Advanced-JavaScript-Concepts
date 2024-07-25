@@ -23,7 +23,6 @@ Javascipt is a synchronous single threaded language.
 =>Javascipt can only executes one command at a time and in a specific order. 
 =>it means it can only go to the next line once the current line finished executing.
 
-
 #In Details :
 
 In JavaScript, the terms "synchronous" and "single-threaded" describe how the language handles the execution of code and its concurrency model.
@@ -82,4 +81,5 @@ Inside timeout
 #Summary
 #Single-threaded: JavaScript runs on a single thread, meaning it can only do one thing at a time.
 #Synchronous: By default, JavaScript executes code in a sequential, blocking manner.
+
 Understanding these concepts is fundamental for grasping how JavaScript handles operations, and why certain constructs like Promises, async/await, and the event loop are essential for building efficient, non-blocking applications.
