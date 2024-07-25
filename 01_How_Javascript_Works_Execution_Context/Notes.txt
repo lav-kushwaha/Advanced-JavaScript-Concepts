@@ -1,0 +1,85 @@
+//Everything in javascipt happens inside an "execution context"
+
+#execution context
+There are two component :-
+1. Memory (variable environment)
+2. code (Thread of execution)
+
+1. Memory (variable environment)
+//variable environment(Memory) : In variable environment functions and variable store in key value pair.
+//Memory component is also known as a variable environment.
+ 
+2. code (Thread of execution)
+//In code component where all the codes are executes one line at a time.
+//Code component is also known thread of execution
+
+What is javascipt?
+Javascipt is a synchronous single threaded language.
+
+#Single threaded : 
+=>Single threaded means javascipt only executes one command at a time.
+
+#Synchronous single threaded :
+=>Javascipt can only executes one command at a time and in a specific order. 
+=>it means it can only go to the next line once the current line finished executing.
+
+
+#In Details :
+
+In JavaScript, the terms "synchronous" and "single-threaded" describe how the language handles the execution of code and its concurrency model.
+Let's break these down:
+
+#Single-threaded
+Single-threaded means that JavaScript has a single call stack, which is the structure that keeps track of the point to which the interpreter of JavaScript should return once the current function is executed. 
+JavaScript executes one piece of code at a time. This single-threaded model simplifies programming since it avoids the complexities related to concurrent execution (like race conditions and deadlocks).
+
+#Synchronous
+Synchronous means that code is executed in a sequence, one statement at a time, from top to bottom. When a function is called, the program waits for it to finish executing before moving on to the next line of code. 
+This is a straightforward and predictable execution model, but it can be inefficient if a function takes a long time to execute (like network requests or file operations), because it blocks the subsequent code from running until it completes.
+
+#Example
+=>Here's an example to illustrate synchronous, single-threaded execution in JavaScript:
+
+console.log('Start');
+
+function syncFunction() {
+    console.log('Inside function');
+}
+
+syncFunction();
+
+console.log('End');
+
+#The output of this code will be:
+
+Start
+Inside function
+End
+
+#Asynchronous Operations in Single-threaded JavaScript
+While JavaScript is single-threaded and synchronous by nature, it has mechanisms to handle asynchronous operations, allowing non-blocking behavior. 
+This is mainly achieved through the event loop and callback functions, along with modern features like Promises and async/await.
+
+=>Here's an example of asynchronous code:
+
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Inside timeout');
+}, 2000);
+
+console.log('End');
+
+#The output of this code will be:
+
+Start
+End
+Inside timeout
+
+=> In this example, setTimeout is used to simulate an asynchronous operation. 
+=> The callback function passed to setTimeout is executed after a delay, allowing the code that follows setTimeout to run immediately.
+
+#Summary
+#Single-threaded: JavaScript runs on a single thread, meaning it can only do one thing at a time.
+#Synchronous: By default, JavaScript executes code in a sequential, blocking manner.
+Understanding these concepts is fundamental for grasping how JavaScript handles operations, and why certain constructs like Promises, async/await, and the event loop are essential for building efficient, non-blocking applications.
