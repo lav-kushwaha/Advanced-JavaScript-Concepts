@@ -1,0 +1,73 @@
+### JavaScript Execution Contexts and Phases
+
+#Code :
+var n = 2;
+function square (num){
+    var ans = num*num;
+    return ans;
+}
+var square2 = square(n);
+var square4 = square(4);
+
+When the JavaScript engine executes your code, it creates a global execution context and function execution contexts as needed. Each execution context goes through two phases: the memory creation phase and the code execution phase.
+
+#### Global Execution Context
+
+**Memory Creation Phase:**
+1. **Variable and Function Declarations:**
+   - `n`: `undefined`
+   - `square`: reference to the function `square(num) {...}`
+   - `square2`: `undefined`
+   - `square4`: `undefined`
+
+During this phase, JavaScript allocates memory for variables and functions but does not yet assign values to variables (they are `undefined` initially).
+
+**Code Execution Phase:**
+1. `var n = 2;`
+   - `n`: `2`
+2. Function declaration for `square` is skipped during the execution phase as it was handled in the memory creation phase.
+3. `var square2 = square(n);`
+   - Function `square` is invoked, creating a new function execution context.
+
+#### Function Execution Context for `square(n)`
+
+**Memory Creation Phase:**
+1. `num`: `undefined`
+2. `ans`: `undefined`
+
+**Code Execution Phase:
+1. `num` is assigned the value `2` (passed from `n`).
+2. `ans` is calculated as `num * num`, which is `2 * 2 = 4`.
+3. The function returns `4`, so `square2` is assigned the value `4`.
+
+Returning to the global execution context:
+1. `var square4 = square(4);`
+   - Function `square` is invoked again, creating a new function execution context.
+
+#### Function Execution Context for `square(4)`
+
+**Memory Creation Phase:**
+1. `num`: `undefined`
+2. `ans`: `undefined`
+
+**Code Execution Phase:**
+1. `num` is assigned the value `4`.
+2. `ans` is calculated as `num * num`, which is `4 * 4 = 16`.
+3. The function returns `16`, so `square4` is assigned the value `16`.
+
+After the code execution completes, the global execution context contains:
+- `n`: `2`
+- `square2`: `4`
+- `square4`: `16`
+
+### Summary
+1. **Memory Creation Phase**:
+   - All variable declarations are assigned `undefined`.
+   - Function declarations are assigned their respective function objects.
+2. **Code Execution Phase**:
+   - Variables are assigned their actual values.
+   - Functions are invoked, creating new execution contexts with their own memory creation and code execution phases.
+
+### Final Note
+The execution context (both global and function-level) is created when the code starts executing and is removed once the code finishes execution. 
+Each function call creates a new execution context, which is deleted after the function finishes executing.
