@@ -6,8 +6,6 @@ function square(num) {
 var square2 = square(n);
 var square4 = square(4);
 
-console.log(square2)
-
 /**
 Q. How does this code work behind the scenes?
 => When we run this code, a global execution context is created.

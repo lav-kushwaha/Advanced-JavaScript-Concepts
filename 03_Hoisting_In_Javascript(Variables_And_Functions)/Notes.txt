@@ -1,0 +1,74 @@
+What is Hoisting in javascript?
+=>Hoisting in javascript where you can accesed variable declaration and function declaration before you declared it.
+
+var x = 7;
+
+function getName(){
+    console.log("Lav kushwaha");
+}
+
+getName();
+console.log(x);
+console.log(getName);
+
+Note : Even before the code is start executing memory is allocated to all variables(x:undefined) and functions(function getName(){console.log("Lav kushwaha")}).
+
+
+==============================================Hoisting==================================================================
+
+//What is Hoisting ?
+//Hoisting in JavaScript refers to how variable and function declarations are handled during the memory creation phase of the global execution context. 
+//Variables declared with var are allocated in memory and initialized with undefined, while the entire function declarations are allocated in memory.
+//This leads to the behavior where variables and functions can be referenced before their declaration in the code, though variables will return undefined until they are assigned a value during the execution phase
+
+//#Hoisting
+//Hoisting in JavaScript refers to the behavior during the memory creation phase of the execution context (both global and local). 
+//During this phase, variable and function declarations are processed before any code is executed.
+
+//#Variable Hoisting
+//1.Memory Allocation: Variables declared with var are allocated in memory and initialized with undefined during the memory creation phase.
+//2.Execution Phase: The assignment to these variables happens at their original place in the code during the execution phase.
+
+//Example:
+
+// console.log(a); // Outputs: undefined
+// var a = 10;
+// console.log(a); // Outputs: 10
+
+//In this example:
+
+// During the memory creation phase, var a is allocated in memory and initialized with undefined.
+// During the execution phase, the assignment a = 10 occurs.
+
+//#Function Hoisting
+//Function Declarations: Entire function declarations are allocated in memory during the memory creation phase, making them available throughout their containing scope.
+//Function Expressions: Only the variable declaration is hoisted and initialized with undefined. The assignment of the function expression happens during the execution phase.
+
+//Example with Function Declaration:
+
+// foo(); // Outputs: "Hello!"
+// function foo() {
+//     console.log("Hello!");
+// }
+
+//In this case:
+//During the memory creation phase, the entire function foo is allocated in memory.
+//This allows the function to be called before its declaration in the code.
+
+//Example with Function Expression:
+
+// console.log(bar); // Outputs: undefined
+// bar(); // TypeError: bar is not a function
+// var bar = function() {
+//     console.log("Hello!");
+// };
+
+//In this case:
+//During the memory creation phase, var bar is allocated in memory and initialized with undefined.
+//The function expression assignment bar = function() { ... } happens during the execution phase.
+//Calling bar() before the assignment results in a TypeError because bar is undefined at that point.
+
+//Summary
+/**Hoisting in JavaScript refers to how variable and function declarations are processed during the memory creation phase of the execution context. 
+Variables declared with var are allocated in memory and initialized with undefined, while entire function declarations are allocated in memory, making them available before their declaration in the code. 
+Variables will return undefined if accessed before their assignment, which occurs during the execution phase.*/
