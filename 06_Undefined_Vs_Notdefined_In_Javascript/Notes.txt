@@ -1,0 +1,37 @@
+#What is loosely Type language ?
+=>A loosely typed language, also known as a dynamically typed language, is one in which variables do not have a fixed type. 
+=>This means that the type of a variable can change at runtime based on the type of the value assigned to it. In such languages, you don't need to explicitly declare the type of a variable
+
+1.Dynamic Typing:
+=>Variables can hold values of any type, and the type can change dynamically.
+
+#Example:
+let x = 42;    // x is a number
+x = "hello";   // now x is a string
+
+#Examples of Loosely Typed Languages
+JavaScript
+Python
+Ruby
+PHP
+Perl
+
+#Advantages
+Flexibility: You can quickly prototype and write code without worrying about strict type rules.
+Ease of Use: It’s easier for beginners to learn and write code.
+
+#Disadvantages
+Runtime Errors: Type-related errors might only be caught at runtime, potentially leading to bugs.
+Less Predictable: Code can be less predictable and harder to debug due to changing types.
+
+#Example in JavaScript
+let a = 10;        // a is a number
+a = "hello";       // now a is a string
+a = true;          // now a is a boolean
+
+In this example, the variable a changes its type from a number to a string to a boolean, showcasing the dynamic and loosely typed nature of JavaScript.
+
+
+
+
+
