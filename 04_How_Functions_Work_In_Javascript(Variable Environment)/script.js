@@ -29,10 +29,10 @@ function b() {
 # console.log()
 => When function a() is invoked, its execution context is created, and the variable x is assigned 'undefined' in the memory creation phase.
 => In the code execution phase, x is assigned its original value, replacing 'undefined' inside the memory space in the execution context.
-=> In line 9, when we call console.log(x), the JavaScript engine will look for the value of x in the local memory space (local memory space is limited to that particular execution context).
+=> In line 8, when console.log(x) is execute, the JavaScript engine will look for the value of x in the local memory space (local memory space is limited to that particular execution context).
 => console.log(x) will find 10 in its local memory and print it to the console.
 
-Note: After function a() is executed, the whole function's execution context will be removed from the Global Execution Context (GEC) and from the call stack.
+Note: After function a() is executed, the whole function's execution context will be removed from the scope and from the call stack.
 
 => Similarly, this happens for function b().
 */
