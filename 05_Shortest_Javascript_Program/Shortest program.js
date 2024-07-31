@@ -18,7 +18,8 @@ For example:
 => There is always a global object created.
 => Even if this script.js file is empty, the JavaScript engine will still create a global object.
 
-=> At the global level or base level in the execution context, `this === window` is `true`. If you log `this` to the console, you'll see it is equal to the window object.
+=> At the global level or base level in the execution context, `this === window` is `true`.
+=>If you log `this` to the console, you'll see it is equal to the window object.
 
 # Global Space or Scope
 => The global space or scope is any code you write in JavaScript that is not inside a function.
