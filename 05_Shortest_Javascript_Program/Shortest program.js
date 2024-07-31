@@ -2,7 +2,8 @@
 
 /*
 # Window: The global object created along with the global execution context.
-=> Whenever any JavaScript program runs, a global object and a global execution context are created. Along with the execution context, a "this" reference is also created.
+=> Whenever any JavaScript program runs, a global object and a global execution context are created. 
+=>Along with the execution context, a "this" reference is also created.
 
 Note: Wherever JavaScript is running, there must be a JavaScript engine. 
 For example:
