@@ -10,7 +10,6 @@ let a;
 console.log(a); // undefined
 //Behavior: No error; returns undefined.
 
-
 //Example 2: Missing property:
 let obj = {};
 console.log(obj.someProperty); // Output: undefined
