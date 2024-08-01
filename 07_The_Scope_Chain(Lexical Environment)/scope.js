@@ -8,7 +8,6 @@
 2.Function Scope
 3.Block Scope
 4.Lexical Scope
-
 */
 
 // Global Scope
@@ -77,7 +76,7 @@ outerFunctionChain();
 
 
 /*
-#Summary
+#Summary :
 1.Global Scope: Variables are accessible from anywhere in the code.
 2.Function Scope: Variables are accessible only within the function.
 3.Block Scope: Variables are accessible only within the block.
