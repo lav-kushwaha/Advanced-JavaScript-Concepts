@@ -52,7 +52,8 @@
        Lexical environment = local memory + lexical environment of its parent. */
     
     // Scope Chain: 
-    /* This is the mechanism that JavaScript uses to "look up" variables. It starts from the local scope and moves up to the parent scopes until it finds the variable or reaches the global scope. 
+    /* This is the mechanism that JavaScript uses to "look up" variables. 
+       It starts from the local scope and moves up to the parent scopes until it finds the variable or reaches the global scope. 
        If the variable is not found, it results in a ReferenceError. */
     
     // #Note :
