@@ -41,7 +41,7 @@ z(); //10
 function x(){
     var a = 10;
      function y(){
-        console.log(a);
+        console.log(a);//it remembers the reference to "a"
     }
     a = 100;
     return y;
