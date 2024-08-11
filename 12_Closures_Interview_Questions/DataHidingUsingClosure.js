@@ -9,7 +9,7 @@
 // console.log(counter);
 
 
-//Note : the major problem in this code is that anubody in this code access this "counter" and chnaged it.
+//Note : the major problem in this code is that anyone in this code access this "counter" and changed it.
 
 
 // //Example 2: Data Hiding Using Closure.
