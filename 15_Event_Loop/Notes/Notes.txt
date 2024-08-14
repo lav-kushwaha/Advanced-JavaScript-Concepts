@@ -1,0 +1,59 @@
+#Event Loop :
+=>An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+=>The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded.
+
+#Event Loop concepts:
+
+In JavaScript, the event loop is a mechanism that enables asynchronous operations to be executed in a non-blocking manner. 
+It's the core reason why JavaScript can handle tasks like fetching data from a server or responding to user interactions without freezing the entire application. 
+
+#Here's how it works:
+
+#Call Stack:
+JavaScript code is executed in a single-threaded manner, meaning only one piece of code can run at a time. 
+This code is placed on the call stack, which is a LIFO (Last In, First Out) structure.
+
+#Web APIs:
+When you encounter asynchronous operations like setTimeout, fetch, or event listeners, they are handed off to the browser's Web APIs. 
+These APIs run in the background, independent of the main JavaScript thread.
+
+Callback Queue (Task Queue):
+Once an asynchronous operation is complete, its associated callback function is placed in the callback queue.
+
+#Event Loop:
+The event loop continuously checks if the call stack is empty. If it is, it takes the first callback function from the callback queue and pushes it onto the call stack for execution. 
+This process continues indefinitely, ensuring that JavaScript can handle asynchronous tasks without blocking the main thread.
+
+Example:
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout");
+}, 0);
+
+console.log("End");
+
+Output:
+
+Start
+End
+Timeout
+
+
+Even though the timeout is set to 0 milliseconds, it doesn't execute immediately.
+The event loop prioritizes the synchronous code (Start and End), and only then does it pick up the callback function from the queue and executes it.
+
+In summary, the event loop allows JavaScript to be non-blocking and responsive by managing the execution of asynchronous operations through the call stack, Web APIs, and callback queue.
+
+
+#Callback Queue.
+The callback queue works as a mediator between the event loop and the call stack. 
+When a timer expires, callback functions are added to the queue in a serial manner. 
+When the call stack is empty, the event loop fetches the functions from the queue in FIFO order and moves the first task to the call stack for execution.
+
+Web APIs, such as XMLHttpRequest, setInterval, and setTimeout, as well as events like keyboard inputs and mouse clicks, can push tasks to the callback queue.
+For example, when a user clicks "allow" on a pop-up, the API receives data from the browser and uses the success callback to handle the result. 
+Instead of pushing the callback back onto the call stack, which could disrupt other tasks, the callback is pushed to the task queue to be executed later. 
+Callbacks are often used in asynchronous JavaScript, especially in older code or libraries that haven't been updated to use newer async patterns like async/await or Promises. 
+Callbacks can also be useful when more precise control over operation ordering is needed.
