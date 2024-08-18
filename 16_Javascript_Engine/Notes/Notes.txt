@@ -1,0 +1,109 @@
+Q.What is the first javascript engine?
+=>First javascript engine is known as "SPIDER MONKEY" used in firefox.
+
+Note : javascript engine is not a machine.
+
+Q. What is javascript engine ?
+=>Javascript engine is not a machine. it just a program written in low level language.
+=>i.e, Javascript V8 engine is written in c++
+
+A JavaScript runtime environment is a specialized environment where JavaScript code can be executed. 
+It provides everything needed to run JavaScript outside of a web browser, including:
+
+#JavaScript Engine:
+
+This is the core component that parses and executes JavaScript code.
+Popular engines include V8 (used in Chrome and Node.js), SpiderMonkey (used in Firefox), and JavaScriptCore (used in Safari).
+
+APIs:
+Runtime environments provide additional functionalities through APIs (Application Programming Interfaces). 
+These APIs allow JavaScript to interact with the underlying system, such as reading files, making network requests, and accessing hardware features.
+
+Event Loop:
+JavaScript is single-threaded, meaning it executes code one line at a time. 
+The event loop manages asynchronous operations, allowing JavaScript to handle tasks like I/O without blocking the main thread.
+
+#Common JavaScript Runtime Environments:
+
+Web Browsers:
+The most common runtime environment, providing APIs for interacting with the DOM, handling user events, and making network requests.
+
+Node.js:
+Allows JavaScript to run on the server-side, providing APIs for file system access, network programming, and more.
+
+Deno:
+A newer runtime environment focusing on security, built-in TypeScript support, and a simplified module system.
+
+Electron:
+Enables the creation of cross-platform desktop applications using web technologies (HTML, CSS, and JavaScript).
+
+
+#JavaScript Engine Architecture :
+=>Js Engine takes code as the input (What we write in code).
+=>This code goes to 3 Major steps :
+
+1.Parsing
+2.Compilation
+3.Execution
+
+#In Details : 
+
+1.Parsing :
+
+=>During the parsing phase the code which we write broken down into TOKENS.
+=>i.e, Suppose, we write code let a = 10, 
+=>so, it broke into token "let" is a token and "a","=","10" is another tokens.
+
+There is also known as SYNTAX-PARSER :
+=>The job of SYNTAX-PARSER is basically takes the code and converted into AST (Abstract syntax tree).
+=>AST which is generated parse into Compilation phase.
+
+2.Compilation :
+
+=>In Compilation there something known as JIT(Just In Time) compilation.
+
+Before Understanding JIT compilation understand difference between INTERPRETER and COMPILATION.
+
+Q.Difference between INTERPRETER and COMPILER.
+
+#INTERPRETTER
+=>INTERPRETER takes your code and start executing line by line in the order.
+
+#COMPILER
+=>In COMPILER Before executing any code.
+=>It first compile the whole code and it form new code.
+=>which is optimized version of new code. which is runs very fast and it has alot of improvement.
+
+Note : INTERPRETER is very fast it does not wait code for compile first and then execute.
+but in case of COMPILER it first compile then it is executing.
+=>In case of INTERPRETTER we have more speed but in case of COMPILER we have more efficiency.
+
+Q.JavaScript is COMPILER language or INTERPRETTER ?
+JavaScript is an interpreted language, not a compiled one. 
+
+Here's what that means:
+
+Interpreted Language:
+Execution: JavaScript code is executed line by line by an interpreter, typically within a web browser. 
+The browser reads the JavaScript code, interprets it, and executes it immediately without needing a separate compilation step.
+Real-Time Execution: Because it's interpreted, JavaScript can be run directly in the browser, making it ideal for dynamic web pages where you might need to respond to user inputs or events instantly.
+
+Compiled Language:
+Compilation: In contrast, a compiled language (like C++ or Java) requires the code to be converted (compiled) into machine code by a compiler before it can be executed. 
+This compiled code is then run by the computer's hardware.
+Execution: After compilation, the executable file can be run directly by the operating system without further processing.
+
+Modern JavaScript Engines:
+While JavaScript is traditionally interpreted, modern JavaScript engines (like Google's V8 engine in Chrome) use Just-In-Time (JIT) compilation. 
+JIT compilation compiles JavaScript code to machine code at runtime, combining the benefits of both interpretation (ease of execution) and compilation (speed).
+
+So, while JavaScript is primarily an interpreted language, modern advancements allow it to achieve performance closer to compiled languages in certain contexts.
+
+
+
+
+
+
+
+
+
