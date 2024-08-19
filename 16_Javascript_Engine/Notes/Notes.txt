@@ -4,6 +4,7 @@ Q.What is the first javascript engine?
 Note : javascript engine is not a machine.
 
 Q. What is javascript engine ?
+=>Js is JIT compile language.
 =>Javascript engine is not a machine. it just a program written in low level language.
 =>i.e, Javascript V8 engine is written in c++
 
@@ -37,6 +38,7 @@ A newer runtime environment focusing on security, built-in TypeScript support, a
 Electron:
 Enables the creation of cross-platform desktop applications using web technologies (HTML, CSS, and JavaScript).
 
+====================================================================================================================================================================================================================================
 
 #JavaScript Engine Architecture :
 =>Js Engine takes code as the input (What we write in code).
@@ -48,7 +50,7 @@ Enables the creation of cross-platform desktop applications using web technologi
 
 #In Details : 
 
-1.Parsing :
+1.PARSING PHASE :
 
 =>During the parsing phase the code which we write broken down into TOKENS.
 =>i.e, Suppose, we write code let a = 10, 
@@ -58,15 +60,15 @@ There is also known as SYNTAX-PARSER :
 =>The job of SYNTAX-PARSER is basically takes the code and converted into AST (Abstract syntax tree).
 =>AST which is generated parse into Compilation phase.
 
-2.Compilation :
+2.COMPILATION PHASE :
 
-=>In Compilation there something known as JIT(Just In Time) compilation.
+=>In Compilation there is something known as JIT(Just In Time) compilation.
 
 Before Understanding JIT compilation understand difference between INTERPRETER and COMPILATION.
 
 Q.Difference between INTERPRETER and COMPILER.
 
-#INTERPRETTER
+#INTERPRETER
 =>INTERPRETER takes your code and start executing line by line in the order.
 
 #COMPILER
@@ -78,9 +80,72 @@ Note : INTERPRETER is very fast it does not wait code for compile first and then
 but in case of COMPILER it first compile then it is executing.
 =>In case of INTERPRETTER we have more speed but in case of COMPILER we have more efficiency.
 
+=>after parsing we got AST and now that AST will goes to the interpreter.
+then interpreter converts our high level code into byte code and that code moves to execution steps.
+and while doing this all it takes the help of compiler and compiler optimized the code as much as it can on the runtime thats why its also known as JIT compilation.
+
+#JIT(Just In Time)
+=>JIT (Just-In-Time) compilation compiles frequently used JavaScript code into machine code at runtime, optimizing performance based on actual usage. 
+=>This approach enhances overall speed, despite a slight initial delay, by combining the benefits of interpretation and compilation.
+
+#AOT (Ahed Of Time)
+=>AOT (Ahead-Of-Time) Compilation is a method where the source code of a program is compiled into machine code before the program is run, usually during the build process. 
+=>This machine code is what the computer's hardware directly executes.
+
+=>In js engine there is AOT in that case the compiler. 
+=>it take some peace of code  which is going to execute later and it tries to optimized it as much as it can.
+=>its also produce the byte code which is goes to execution phase.
+
+3.EXECUTION PHASE :
+=>In the execution phase it not possible without two major component.
+1.Memory heap.
+2.Call satck
+3.Garbage collector.(Mark and sweep algorithm)
+
+#Memory Heap : 
+=>Memory heap where all the memory store it is constantly sync with callstack, garbage collector and other thing works together.
+=>Memory heap is the space where all the varibales and functions assigned to memory.
+
+#(Garbage collector.)Mark and sweep algorithm :
+=>Mark and Sweep Algorithm is a garbage collection technique used to manage memory:
+
+Mark Phase:
+Mark all objects reachable from root references (e.g., global variables, active stack).
+
+Sweep Phase:
+Sweep through memory, freeing up space occupied by objects that are not marked (i.e., unreachable).
+
+Summary :
+=>Whenever we execute any js code it needs container which have everything require to run js code that has run time environment.
+=>Browsers has js runtime environment
+=>Node js has js runtime environment
+and it consitutes of the v8 js engine - it also has access to api, callback queue, event loop etc.
+=>Now, Inside js engine there is many phases - the code they went through - 
+
+1.parsing phase 
+=>In the parsing phase Tokens are generated and after the tokens the syntax tree parser, parse the whole code and convert the AST.
+
+2.compilation phase
+=>AST parser then goes to the interpreter and it produce the byte code and goes into the execution phase.
+
+3.execution phase
+=>In execution phase byte code is executed with the help of memory heap and the call stack.
+=>and the compiler constantly working upon optimized the code - we have garbage collector (optimized the memory space)
+
+In Short :
+When JavaScript code is executed:
+It is parsed into tokens and converted into an AST.
+The AST is compiled into bytecode by the interpreter and JIT compiler.
+The bytecode is executed with the help of the memory heap, call stack, and garbage collector.
+
+Note : 
+=>Js runtime environment => js engine (inside)=> there are so many phases - parsing, compilation (interpreter, compiler),execution(Memory heap, callstack)
+=>parsing, interpreting, compiling, optimizing, and managing memory.
+
+====================================================================================================================================================================================================================================
+
 Q.JavaScript is COMPILER language or INTERPRETTER ?
 JavaScript is an interpreted language, not a compiled one. 
-
 Here's what that means:
 
 Interpreted Language:
@@ -99,7 +164,7 @@ JIT compilation compiles JavaScript code to machine code at runtime, combining t
 
 So, while JavaScript is primarily an interpreted language, modern advancements allow it to achieve performance closer to compiled languages in certain contexts.
 
-
+====================================================================================================================================================================================================================================
 
 
 
