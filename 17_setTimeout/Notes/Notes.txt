@@ -1,0 +1,37 @@
+JavaScript's concurrency model is based on an **event loop**. Here's a simplified breakdown:
+
+1. **Single-Threaded**: JavaScript runs in a single thread, meaning it can only do one thing at a time.
+
+2. **Event Loop**: The event loop manages what code runs and when. It checks the **call stack** (where code is executed) and the **message queue** (where tasks wait to be run).
+
+3. **Call Stack**: Functions are executed here one by one. If the stack is busy, new tasks have to wait.
+
+4. **Message Queue**: Asynchronous tasks (like `setTimeout` or `fetch`) go here. When the call stack is empty, the event loop moves tasks from the queue to the stack.
+
+5. **Microtask Queue**: This is a special queue for tasks like promises. These tasks run immediately after the current task, before moving to the next message queue task.
+
+### Example:
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout callback");
+}, 1000);
+
+Promise.resolve().then(() => {
+  console.log("Promise callback");
+});
+
+console.log("End");
+
+### Output:
+Start
+End
+Promise callback
+Timeout callback
+
+- **Call stack**: Executes "Start" and "End."
+- **Microtask queue**: Executes the promise callback ("Promise callback").
+- **Message queue**: Executes the timeout callback ("Timeout callback") last.
+
+### Summary:
+JavaScript handles multiple tasks efficiently using the event loop, even though it can only do one thing at a time.
