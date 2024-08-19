@@ -1,0 +1,13 @@
+#Higher order function
+=>A function which takes another function as an argument or return a function from it is that is known a HOF.
+
+=>A Higher-Order Function (HOF) in JavaScript is a function that either:
+1.Takes one or more functions as arguments.
+2.Returns a function as its result.
+Higher-order functions are a powerful concept in functional programming, allowing you to write more abstract and reusable code.
+
+#Benefits of Higher-Order Functions:
+Code Reusability: You can reuse and compose functions more effectively.
+Abstraction: HOFs help in abstracting patterns that are repeated across your codebase.
+Functional Composition: HOFs allow for powerful functional composition, making your code more declarative and easier to understand.
+Higher-Order Functions are a core concept in functional programming and are widely used in JavaScript to write clean, maintainable, and modular code.
