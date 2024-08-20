@@ -1,0 +1,25 @@
+1. map()
+The map() method creates a new array by applying a function to each element of an existing array. 
+It does not change the original array but returns a new one.
+
+#Syntax:
+const newArray = array.map(callback);
+
+2. filter()
+The filter() method creates a new array with all elements that pass a test implemented by the provided function. Like map(), it does not mutate the original array.
+
+#Syntax:
+const newArray = array.filter(callback);
+
+3. reduce()
+The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+
+#Syntax:
+const result = array.reduce(callback, initialValue);
+
+Summary
+map(): Transforms each element of an array and returns a new array.
+filter(): Filters elements of an array based on a condition and returns a new array.
+reduce(): Reduces the array to a single value by iteratively combining each element with an accumulator.
+
+
