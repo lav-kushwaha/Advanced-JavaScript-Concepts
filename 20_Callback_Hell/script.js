@@ -12,7 +12,7 @@ console.log("I am learning js");
 
 const cart = ["shoes","pants","kurta"];
 
-//create order -> Proceed to payment -> order summary page.
+//create order -> Proceed to payment -> order summary page -> update Wallet.
 // api.createOrder(cart,function (){
 //     api.proceedToPayment(function (){
 //         api.orderSummary(function(){
