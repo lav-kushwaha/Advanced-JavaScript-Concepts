@@ -1,6 +1,6 @@
 const cart = ["shoes","pants","kurta"];
 
-
+//Example 1 :
 //callback hell :
 createOrder(cart,function(orderId){//it responsibility to createOrder to create order and then call the function proceed to payment.
     proceedToPayment(orderId);
@@ -11,6 +11,7 @@ createOrder(cart,function(orderId){//it responsibility to createOrder to create 
 
 //#Solution - to resolve this we can use promise - it don't take a callback function it's just take card details.
 
+//Example 2 :
 //Promise :
 const promise = createOrder(cart); //whenever this line executed by javascript it will return a promise.
 //promise it nothing but we can assumed it empty object "{}"" with some data value on it {data:value}.
@@ -58,11 +59,5 @@ promise1.then(function(orderId){//callback function attach to promise object.
 //=>In ex-2 we will have control of our program with us - createOrder(cart) api will only do its job. 
 //it will create an order and it will filled the promise object with data (orderId).
 //whenever it wants to and as soon as promise object will filled with data it will automatically call our callback function.
-
-
-
-
-
-
 
 
