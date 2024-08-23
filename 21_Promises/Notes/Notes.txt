@@ -1,2 +1,33 @@
 #Promise 
 =>Promise is used to handle async operations in javascript.
+
+#A JavaScript Promise has three states:
+
+1.Pending: The initial state. The asynchronous operation is still in progress, and the Promise has not been fulfilled or rejected yet.
+
+2.Fulfilled: The operation completed successfully.
+The Promise has a resolved value, which you can access using .then().
+
+3.Rejected: The operation failed. 
+The Promise has an error or reason for rejection, which you can handle using .catch().
+
+let fetchData = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let success = true; // Change to false to simulate rejection
+
+    if (success) {
+      resolve("Data fetched successfully!"); // Fulfilled
+    } else {
+      reject("Error fetching data."); // Rejected
+    }
+  }, 2000);
+});
+
+fetchData
+  .then((data) => console.log("Fulfilled:", data)) // Runs if Promise is fulfilled
+  .catch((error) => console.error("Rejected:", error)) // Runs if Promise is rejected
+  .finally(() => console.log("Promise settled.")); // Runs regardless of outcome
+
+Pending: When fetchData is created.
+Fulfilled: If success is true.
+Rejected: If success is false.
