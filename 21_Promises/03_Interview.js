@@ -13,10 +13,10 @@
 
 //Example Callback Hell :
 //create order -> Proceed to payment -> order summary page -> update Wallet.
-api.createOrder(cart,function (){
-    api.proceedToPayment(orderId,function (){
-        api.ShowOrderSummary(paymentInfo,function(){
-            api.updateWalletBalance();
+createOrder(cart,function (){
+    proceedToPayment(orderId,function (){
+        ShowOrderSummary(paymentInfo,function(){
+            updateWalletBalance();
         });
     });
 });  
@@ -25,17 +25,23 @@ api.createOrder(cart,function (){
 //Example Promise chaining.
 const promise = createOrder(cart);
 
+promise.then((orderId)=>{
+    proceedToPayment(orderId);
+})
+
+//OR
+
 createOrder(cart)
 .then(function(orderId){
-    api.proceedToPayment(orderId);
+    proceedToPayment(orderId);
 })
 
 .then(function(paymentInfo){
-    api.ShowOrderSummary(paymentInfo);
+     ShowOrderSummary(paymentInfo);
 })
 
 .then(function(){
-    api.updateWalletBalance();
+    updateWalletBalance();
 })
 
 //Important - Promise Chaining : 
@@ -49,15 +55,15 @@ createOrder(cart)
 
 createOrder(cart)
 .then(function(orderId){
-   return api.proceedToPayment(orderId);
+   return proceedToPayment(orderId);
 })
 
 .then(function(paymentInfo){
-   return api.ShowOrderSummary(paymentInfo);
+   return ShowOrderSummary(paymentInfo);
 })
 
 .then(function(){
-   return api.updateWalletBalance();
+   return updateWalletBalance();
 });
 
 
