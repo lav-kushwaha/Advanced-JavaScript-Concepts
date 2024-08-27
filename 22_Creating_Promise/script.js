@@ -87,3 +87,6 @@ function proceedToPayment(orderId){
 
 
 //Note : Promise is an object.
+//There are 3 state of promise - pending, fulfilled and rejected.
+
+
