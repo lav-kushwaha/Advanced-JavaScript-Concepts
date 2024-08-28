@@ -1,0 +1,62 @@
+ /**
+ * What is async ?
+ * What is await ?
+ * How aync await works behind the scenes?
+ * Examples of using async/await
+ * Error Handling
+ * Interviews
+ * Async await vs Promise .then/.catch
+ */
+ 
+ * What is async ?
+=>async is a keyword which is we use before the function to create a async function.
+=>aync function always return a promise(object)
+
+=>from async function either you will return a promsie or
+if u don't return a promise from it, if you return a value, 
+then this async function will automatically wrapped the value,
+inside a promsie and will return a promise.
+
+* what is await ?
+=> await is a keyword that can be only used inside a async function.
+=> await keyword is also used to resolve the promise.
+=> await keyword is wait for promise to be resolved then it will move to the next line.
+
+
+* Example(Imp-example) : Difference between promise vs async await.(v.imp)
+
+//asynchronous operations which is not get data quickly it is take some time.
+const p = new Promise((resolve,reject)=>{
+   setTimeout(()=>{
+    resolve("Promise resolved value!!")
+   },5000);
+});
+
+
+//await is a keyword that can be only used inside a async function.
+async function handlePromise(){
+    //Js engine will wait(i.e,10sec,20sec,30sec etc) for promise to be resolved then it will move to the next line.
+    //otherwise, it will not move, it will wait.
+    const val = await p;
+    console.log(val);
+    console.log("Hello world - await");
+}
+
+handlePromise();
+
+//output :
+// Promise resolved value!!
+// Hello world - await
+
+//promise resolving using .then() method.
+function getData(){    
+    //Js engine will not wait for promise to be resolved - it will move on to the next line.
+    p.then((data)=>console.log(data));
+    console.log("Hello world - .then")
+}
+
+getData();
+
+//output :
+//Hello world - .then
+//Promise resolved value!!
