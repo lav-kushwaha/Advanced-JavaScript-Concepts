@@ -39,6 +39,7 @@ createOrder(cart)
     console.log(err.message);
 })
 
+//create order
 function createOrder(cart) {
     const pr = new Promise(function (resolve, reject) {
         if(!validateCart){
@@ -57,6 +58,7 @@ function createOrder(cart) {
     return pr;
 }
 
+//proceedToPayment
 function proceedToPayment(orderID) {
     return new Promise(function (resolve, reject) {
         if(orderID){
@@ -71,6 +73,7 @@ function proceedToPayment(orderID) {
     })
 }
 
+//showOrderSummary
 function showOrderSummary(paymentInfo) {
     return new Promise(function (resolve, reject) {
         if(paymentInfo.paymentStatus){
@@ -85,6 +88,7 @@ function showOrderSummary(paymentInfo) {
     })
 }
 
+//updatewallet
 function updateWallet(history) {
     return new Promise(function (resolve, reject) {
         if(history){
@@ -103,6 +107,7 @@ function updateWallet(history) {
     })
 }
 
+//validatecart
 function validateCart(cart) {
     return true;
 }
