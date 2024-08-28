@@ -1,0 +1,22 @@
+ /**
+ * What is async ?
+ * What is await ?
+ * How aync await works behind the scenes?
+ * Examples of using async/await
+ * Error Handling
+ * Interviews
+ * Async await vs Promise .then/.catch
+ */
+ 
+ * What is async ?
+=>async is a keyword which is we use before the function to create a async function.
+=>aync function always return a promise(object)
+
+=>from async function either you will return a promsie or
+if u don't return a promise from it, if you return a value, 
+then this async function will automatically wrapped the value,
+inside a promsie and will return a promise.
+
+* what is await ?
+=> await is a keyword that can be only used inside a async function.
+=> await keyword is also used to resolve the promise.
