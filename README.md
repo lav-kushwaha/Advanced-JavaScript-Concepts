@@ -1,14 +1,10 @@
-Certainly! Below is a draft for a README file that you can use for your GitHub repository, outlining the various JavaScript concepts you've learned and implemented.
-
----
-
 # JavaScript Concepts and Implementation
 
 Welcome to the repository of JavaScript concepts and implementations. This repository showcases a series of topics and practical examples that illustrate various aspects of JavaScript programming.
 
 ## Table of Contents
 
-1. [How JavaScript Code is Executed (Call Stack)](#how-javascript-code-is-executed-call-stack)
+1. [How JavaScript Code is Executed (Call Stack)](01_How_Javascript_Works_(Execution_Context))
 2. [Hoisting in JavaScript (Variables and Functions)](#hoisting-in-javascript-variables-and-functions)
 3. [How Functions Work in JavaScript (Variable Environment)](#how-functions-work-in-javascript-variable-environment)
 4. [Global Object and Window Object](#global-object-and-window-object)
