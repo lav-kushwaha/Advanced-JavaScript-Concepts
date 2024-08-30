@@ -137,7 +137,7 @@ const pr10sec = new Promise((resolve,reject)=>{
      console.log("Hello world - await02");
  }
  
- //Invoking a promise.
+ //Invoking a method.
  handlePromise();
 
 
