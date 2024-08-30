@@ -140,7 +140,9 @@ const pr10sec = new Promise((resolve,reject)=>{
  //Invoking a method.
  handlePromise();//dry run this code and see how it's working.
 
-
+ //Important Points
+ //The await keyword pauses the function’s execution until the promise resolves, but it does not block the execution of other code outside the async function.
+ //While await is waiting for a promise, JavaScript’s event loop can handle other tasks or promise resolutions.
  
 
 

@@ -17,6 +17,12 @@ if u don't return a promise from it, if you return a value,
 then this async function will automatically wrapped the value,
 inside a promsie and will return a promise.
 
+//aync await is just a syntactical sugar over promises.
+//Behind the scene it is uses promises.
+//async await is new way of writing promises.
+
+Note : for Handling_Promises use aync await.
+
 * what is await ?
 => await is a keyword that can be only used inside a async function.
 => await keyword is also used to resolve the promise.
@@ -60,3 +66,8 @@ getData();
 //output :
 //Hello world - .then
 //Promise resolved value!!
+
+*Interview Tips :
+//Explain in details if interviewer will ask about aync await.
+//Try to explain promises and then tell why we need async await.
+//and if possible try to explain how async await works the behind the scenes.

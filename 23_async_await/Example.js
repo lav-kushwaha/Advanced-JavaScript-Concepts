@@ -19,7 +19,7 @@ const API_URL = "https://api.github.com/users/lav-kushwaha";
 async function handlePromise(){
     //fetch()=>Response.json()=>jsonValue
     try {
-        let data = await fetch(API_RL);
+        let data = await fetch(API_URL);//fetch method will return promise.
         let response = await data.json();
         console.log(response);
     }
@@ -35,4 +35,9 @@ handlePromise();
 // handlePromise().catch((err)=>console.log(err));
 
 //=======================================================================================================================================================================================================================================================
-//Interview Tips :
+//Async/await vs Promise.then/catch
+
+//aync await is just a syntactical sugar over promises.
+//Behind the scene it is uses promises.
+
+//async await is new way of writing promises.
