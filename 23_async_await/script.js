@@ -131,12 +131,13 @@ const pr10sec = new Promise((resolve,reject)=>{
      console.log("Hello world - await");
  
      //await wait 5sec for promise to be resolved - but it is also takes 10sec to be resolved,
-     //bcz in line no 127 await is waiting for 10sec for promise to be resolved.
+     //bcz in line no 127, await is waiting for 10sec for promise to be resolved.
      const val1 = await pr5sec;
      console.log(val1);
      console.log("Hello world - await02");
  }
  
+ //Invoking a promise.
  handlePromise();
 
 
