@@ -138,7 +138,7 @@ const pr10sec = new Promise((resolve,reject)=>{
  }
  
  //Invoking a method.
- handlePromise();
+ handlePromise();//dry run this code and see how it's working.
 
 
  
