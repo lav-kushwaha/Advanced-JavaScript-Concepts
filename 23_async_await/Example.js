@@ -15,6 +15,7 @@
 
 //Example 2 : Error Handling(try-catch)
 
+//github api
 const API_URL = "https://api.github.com/users/lav-kushwaha";
 async function handlePromise(){
     //fetch()=>Response.json()=>jsonValue
