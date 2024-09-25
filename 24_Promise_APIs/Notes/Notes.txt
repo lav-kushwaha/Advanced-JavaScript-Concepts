@@ -1,0 +1,57 @@
+Promise API in JavaScript:
+
+### Promise Basics:
+- **Promise**: An object representing the eventual completion (or failure) of an asynchronous operation.
+- States: 
+  - Pending`: Initial state, operation not complete.
+  - Fulfilled`: Operation completed successfully.
+  - Rejected`: Operation failed.
+
+### Creating a Promise:
+
+const myPromise = new Promise((resolve, reject) => {
+  // async operation
+  if (success) resolve(result);  // On success
+  else reject(error);  // On failure
+});
+
+### Consuming Promises:
+- .then()`: Handles fulfillment.
+- .catch()`: Handles rejection.
+- .finally()`: Runs code after promise settles (either resolved or rejected).
+
+myPromise
+  .then(result => console.log(result))  // On success
+  .catch(error => console.error(error))  // On failure
+  .finally(() => console.log("Done"));  // Always runs
+
+### Promise Methods:
+- **`Promise.all([promises])`**: Resolves when all promises resolve, rejects if any fail.
+- **`Promise.race([promises])`**: Resolves/rejects as soon as the first promise settles(resolve/reject)
+- **`Promise.allSettled([promises])`**: Waits for all promises to settle (resolve or reject).
+- **`Promise.any([promises])`**: Resolves as soon as any promise is fulfilled.
+
+//When to use which promise method :
+1.Promise.all()
+=>suppose, you made 5 api calls, and if you need result of all 5 api calls or to resolved all.
+=> and if any one of api fails then it will be reject, so, in this case use promise.all().
+=> it is also known as fail first.
+
+2.Promise.allSettled([promises])
+=>it will wait for all promises to settle and gives the value of reject and resolved.
+
+3.Promise.race([promsies])
+=> As, the name suggest the first promise which is resolve it will give the value of that promise.
+=>whatever(resolve/reject) the promise settled first you will get the result of that promise.
+=>it will return the result of (first settled promise) weather it is (reject or resolved.)
+
+4.Promise.any([promises])
+=>waits for the (first success) or first resolve or first settle promise.
+=> success seeking api, seeking for first success api.
+=>if all promise will be fails, it wil be rejected and give aggregated error.
+=>error : AggregateError: All promises were rejected
+
+Q. Difference btw promise.race() and promise.any() ?
+=> Promise.race() will give the first settle promise result weather it will be rejected or resolve.
+=> Promise.any() will waits for the (first resolved or success) then it will give the result.
+=> if in Promise.any() all the promise will fails then it will give the error.
