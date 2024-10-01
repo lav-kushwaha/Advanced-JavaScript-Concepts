@@ -32,7 +32,8 @@ myFunction();
 // console.log(functionScopedVar); // Error: functionScopedVar is not defined
 
 // Block Scope
-// Variables declared with `let` or `const` inside a block (e.g., inside `{}`) are block-scoped. They are accessible only within that block.
+// Variables declared with `let` or `const` inside a block (e.g., inside `{}`) are block-scoped. 
+//They are accessible only within that block.
 if (true) {
   let blockScopedVar = "I am a block-scoped variable";
   console.log(blockScopedVar); // Accessible here
@@ -41,7 +42,8 @@ if (true) {
 // console.log(blockScopedVar); // Error: blockScopedVar is not defined
 
 // Lexical Scope
-// JavaScript uses lexical scoping (also known as static scoping), which means that the scope of a variable is determined by its location within the source code. Nested functions have access to variables declared in their outer scope.
+// JavaScript uses lexical scoping (also known as static scoping), which means that the scope of a variable is determined by its location within the source code. 
+//Nested functions have access to variables declared in their outer scope.
 function outerFunction() {
   let outerVar = "I am an outer variable";
 
