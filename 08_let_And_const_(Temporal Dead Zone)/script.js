@@ -22,6 +22,9 @@ Q.What is the difference between hoisting and temporal dead zone?
 
 Note : Best Way To Avoid TDZ is write all the declaration and initialization on the top.
 
+======================================================================++++++++++++++++++++++++++++++++=====================================================================
+
+**TYPES OF ERROR IN JS**
 
 #Reference Error :
 
