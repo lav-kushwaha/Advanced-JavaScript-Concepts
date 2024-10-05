@@ -1,0 +1,12 @@
+#Callback Functions ?
+A callback is a function that you pass to another function so it can be called later, usually after something has finished.
+For example, if you want to run some code after loading data from a server, you can use a callback. 
+It helps manage tasks that take time, like waiting for a response or handling a button click.
+In simple terms, a callback is just a way to tell a program: "When you're done with this, call this other function to continue." 
+It makes handling events and delays easier without stopping everything else from running.
+
+
+#Why Use Callbacks?
+Asynchronous Operations: They allow you to handle operations that take time without freezing the rest of your code.
+Decoupling Code: Callbacks help separate tasks, which makes your code more modular and easier to read.
+Event Handling: Callbacks are fundamental in event-driven programming, where certain actions should happen when particular events occur.
