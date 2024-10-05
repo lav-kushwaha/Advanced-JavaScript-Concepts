@@ -1,3 +1,16 @@
+/*
+* What is callback function is javascript
+* Javascript is a synchronous and single-threaded language
+* Blocking the main thread
+* Power of callbacks?
+* Deep about Event listeners
+* Closures Demo with event listeners
+* scope Demo with event listeners
+* Garbage Collections & removeEventListeners
+*/
+
+//=====================================================++++++++++++++++++++++++++++++++++++============================================================
+
 //#What is a callback aka (Main Thread) function in javascript.
 
 // The global execution context is created and pushed onto the call stack.
@@ -7,6 +20,7 @@
 setTimeout(function() {
     console.log("timer");  // This function is set to execute after 5 seconds
 }, 5000);
+
 // The setTimeout function is added to the call stack.
 // It schedules the callback function to run after 5 seconds.
 // After scheduling, setTimeout is popped off the call stack.
