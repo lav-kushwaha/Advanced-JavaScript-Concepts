@@ -1,3 +1,51 @@
+#Callstack
+The call stack in JavaScript is a data structure that keeps track of function calls. 
+It works like a stack of books, following the Last In, First Out (LIFO) rule:
+
+When a function is called, it is added ("pushed") to the top of the call stack.
+When the function finishes executing, it is removed ("popped") from the call stack.
+The call stack handles synchronous function calls and helps JavaScript keep track of what function is currently being executed. 
+If the call stack grows too large (e.g., in endless recursion), it results in a stack overflow.
+For asynchronous tasks, the call stack works with the event loop to determine when callbacks are executed, ensuring that asynchronous code runs only after the current stack is clear.
+
+#Examples : 
+
+Whenever JavaScript code runs, a **global execution context** is created, and this context is **pushed onto the call stack**.
+
+Here's what happens:
+
+1. **Global Execution Context Created**:
+   - When your JavaScript program starts, the **global execution context** is the first thing created. This context includes all top-level code that isn't inside a function.
+   - It initializes the global object (`window` in browsers or `global` in Node.js), sets up `this` in the global scope, and prepares the environment for the rest of the code to run.
+
+2. **Pushed to Call Stack**:
+   - This global execution context is then **pushed onto the call stack**.
+   - The JavaScript engine starts executing the global code, which runs until all the top-level statements are completed.
+
+3. **Function Execution Contexts**:
+   - If a function is called during the execution of the global code, a **new execution context** for that function is created and **pushed onto the call stack**.
+   - Once the function completes, its context is **popped off** the call stack, and control returns to the context below it.
+
+4. **Global Context Removed**:
+   - After all the code in the global execution context is finished, the global context itself is **popped off** the call stack, which usually means the program has completed its execution.
+
+# Example
+
+function greet() {
+  console.log("Hello");
+}
+
+greet();
+
+**Step-by-Step Call Stack Process**:
+  1. **Global Execution Context** is created and **pushed onto the call stack**.
+  2. **`greet()` is called**, so a **new execution context** for `greet` is created and **pushed onto the stack**.
+  3. `greet()` executes, logs `"Hello"`, and then **finishes**. The `greet` execution context is **popped off**.
+  4. **Global Execution Context** is now the only one left, and when the code completes, it too is **popped off**.
+
+Thus, the **global execution context** is the first one pushed onto the call stack, and it remains there until all the global-level code is executed.
+
+=============================================================================================================================================================================================================================
 #Event Loop :
 =>An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
 =>The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded.
@@ -46,7 +94,6 @@ The event loop prioritizes the synchronous code (Start and End), and only then d
 
 In summary, the event loop allows JavaScript to be non-blocking and responsive by managing the execution of asynchronous operations through the call stack, Web APIs, and callback queue.
 
-
 #Callback Queue.
 The callback queue works as a mediator between the event loop and the call stack. 
 When a timer expires, callback functions are added to the queue in a serial manner. 
@@ -57,3 +104,22 @@ For example, when a user clicks "allow" on a pop-up, the API receives data from 
 Instead of pushing the callback back onto the call stack, which could disrupt other tasks, the callback is pushed to the task queue to be executed later. 
 Callbacks are often used in asynchronous JavaScript, especially in older code or libraries that haven't been updated to use newer async patterns like async/await or Promises. 
 Callbacks can also be useful when more precise control over operation ordering is needed.
+
+=============================================================================================================================================================================================================================================================
+
+#Global Object (window)
+var myVar = 10;
+function sayHello() {
+  console.log("Hello!");
+}
+
+console.log(window.myVar); // 10 (in browser)
+window.sayHello(); // "Hello!"
+
+The window object in JavaScript is a global object in the browser environment
+The global object in JavaScript is a container for everything that is globally accessible.
+In browsers, the global object is called window. In Node.js, it is called global. In web workers, it is self.
+Global variables and functions become properties and methods of the global object.
+It provides the runtime environment in which JavaScript code executes, and gives you access to useful built-in functions, objects, and browser-specific APIs.
+The global object is fundamental to JavaScript's runtime context and is crucial for understanding how scopes and environments operate in different contexts, such as browsers or Node.js.
+
