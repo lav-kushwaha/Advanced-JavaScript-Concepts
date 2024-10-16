@@ -1,3 +1,7 @@
+Here's the completed README file with the remaining sections added:
+
+---
+
 # JavaScript Concepts and Implementation
 
 Welcome to the repository of JavaScript concepts and implementations. This repository showcases a series of topics and practical examples that illustrate various aspects of JavaScript programming.
@@ -24,6 +28,7 @@ Welcome to the repository of JavaScript concepts and implementations. This repos
 18. [Promises](#promises)
 19. [Creating Promises](#creating-promises)
 20. [Async/Await](#asyncawait)
+21. [Promise APIs](#promise-apis)
 
 ## How JavaScript Code is Executed (Call Stack)
 
@@ -119,3 +124,16 @@ Welcome to the repository of JavaScript concepts and implementations. This repos
 
 - **Concept**: Provides an overview of `async`/`await` syntax for handling asynchronous operations.
 - **Files**: [23_async_await](23_async_await)
+
+## Promise APIs
+
+- **Concept**: Introduces various Promise APIs available in JavaScript, such as `Promise.all`, `Promise.race`, and more.
+- **Files**: [24_Promise_APIs](24_Promise_APIs)
+
+---
+
+## Created by lav-kushwaha
+
+Feel free to explore, fork, and contribute to this repository! Your feedback and contributions are welcome.
+
+---
