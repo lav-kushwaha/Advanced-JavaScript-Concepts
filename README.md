@@ -1,6 +1,6 @@
 # JavaScript Advanced Concepts and Asynchronous Programming
 
-Welcome to the repository of JavaScript Advanced Concepts and Asynchronous Programming. This repository showcases a series of topics and practical examples that illustrate various aspects of JavaScript programming. 
+Welcome to the repository of JavaScript Advanced Concepts and Asynchronous Programming. This repository showcases a series of topics and practical examples that illustrate various aspects of JavaScript programming.
 
 ## Table of Contents
 
